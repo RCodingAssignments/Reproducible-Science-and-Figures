@@ -1,4 +1,4 @@
-# A function to make sure the column names are cleaned up, removing lower case and spaces
+# A function to make sure the column names are cleaned up, removing upper case and spaces
 clean_column_names <- function(penguins_raw) {
   penguins_raw %>%
     clean_names()
