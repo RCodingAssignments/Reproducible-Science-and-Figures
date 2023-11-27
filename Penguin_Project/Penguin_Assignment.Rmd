@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, tidy.opts = list(width.cutoff=50))
 
 ### Loading all required packages-
 ```{r Data Exploration, message=FALSE, warning=FALSE, include=TRUE, results='hide'}
-#install.packages(c("ggplot2", "palmerpenguins", "dplyr", "janitor", 
+# install.packages(c("ggplot2", "palmerpenguins", "dplyr", "janitor", 
                    "svglite", "ggpubr", "ggstatsplot"))
 
 
