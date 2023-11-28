@@ -10,15 +10,17 @@ output:
   extra_dependencies: ["float"]
 ---
 ```{r setup, include=FALSE}
+install.packages("knitr")
+
+library(knitr)
+
 knitr::opts_chunk$set(echo = TRUE, tidy.opts = list(width.cutoff=50))
 #setting the width of the pdf
 ```
 
 ### Loading all required packages-
 ```{r Data Exploration, message=FALSE, warning=FALSE, include=TRUE, results='hide'}
-# install.packages(c("ggplot2", "palmerpenguins", "dplyr", "janitor", 
-                   "svglite", "ggpubr", "ggstatsplot"))
-
+install.packages(c("ggplot2", "palmerpenguins", "dplyr", "janitor", "svglite", "ggpubr", "ggstatsplot"))
 
 library(palmerpenguins) #to load the dataset
 library(dplyr) #to manipulate the data 
@@ -44,6 +46,7 @@ penguins_raw <- read.csv("penguins_raw.csv") #loading this dataset
 bad_figure <- plot_bad_figure(penguins_raw) 
 #producing the bad figure plot using a function from the ggplotFunctions script 
 
+#create a folder call 'Figures' to save your images  
 save_bad_figure_svg(penguins_raw,
                     "Figures/bad_figure.svg", 
                     size= 15, scaling=1) 
