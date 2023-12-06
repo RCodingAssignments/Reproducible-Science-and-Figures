@@ -38,37 +38,6 @@ source("Functions/ggplotFunctions.r")
 source("Functions/SavingFunctions.r")
 ```
 
-
-```{r, echo=FALSE, warning=FALSE, results='hide'}
-write.csv(penguins_raw, "penguins_raw.csv") #saving the dataset from the palmerpenguins package 
-penguins_raw <- read.csv("penguins_raw.csv") #loading this dataset
-
-bad_figure <- plot_bad_figure(penguins_raw) 
-#producing the bad figure plot using a function from the ggplotFunctions script 
-
-save_bad_figure_svg(penguins_raw,
-                    "Figures/bad_figure.svg", 
-                    size= 15, scaling=1) 
-#saving this figure using a function from the SavingFunctions script
-```
-
-$\text{\underline{QUESTION 1: Data Visualisation for Science Communication}}$
-
-*Create a figure using the Palmer Penguin dataset that is correct but badly communicates the data. **Do not make a boxplot**.*
-
-### a) Provide your figure here:
-```{r, echo=FALSE, warning=FALSE, fig.cap= " a graph showing flipper lengths of different sexes, exemplifying poor graph design"}
-bad_figure
-```
-
-
-### b) Write about how your design choices mislead the reader about the underlying data (200-300 words).
-
-'A scientific figure is, by definition, tied to the data' (Rougier, *et al*. 2014) therefore, figures must convey an objective, accurate representation of the data. The lack of jitter on the above graph obscures individual data points. As such, much of the raw data is absent making it appear as if the sample size is much smaller than it is and in turn, the power. Next, the limits of the y axis are inappropriate as the minimum data point is at 172mm, not near 0mm. The data is then compressed to fit on this inappropriately long axis, obscuring the true distribution of the data as the graph makes it seem as if the range of the data is smaller than in reality. An incorrect choice of scale is a common error in many scientific graphs (Franzblau and Chung 2012) The data obfuscation caused by the lack of jitter and inappropriate y axis is further enhanced by the inappropriate colour scales which make the different islands indistinguishable. Next, not including a title means the graph is not in context. The only information about the animals in the study are that they have flippers, but this is still taxonomically diverse so, readers may apply to the data to the wrong animal- a title would make the sample used clear. The y axis label does not contain units therefore, the flipper lengths depicted are essentially redundant. Finally, the 'NA' are not technically datapoints, just a string of flipper lengths so should not be graphically represented. No statistical analysis can include these values and as such, their inclusion may deter readers away from the actual datapoints. Overall, the above graph contains obscured data and points that are technically not data, neither of which are in context therefore, the true underlying data and its relevance are not indicated. 
-
-* Franzblau, L.E. and Chung, K.C., (2012), 'Graphs, Tables, and Figures in Scientific Publications: The Good, the Bad, and How Not to Be the Latter', *The Journal of Hand Surgery*, 37(3), pp. 591-596. doi: https://doi.org/10.1016/j.jhsa.2011.12.041 
-* Rougier, N.P, *et al*., (2014), 'Ten Simple Rules for Better Figures', *PLOS Computational Biology*, 10(9), pp.e1003833. doi: https://doi.org/10.1371/journal.pcbi.1003833 
-
 $\text{\underline{QUESTION 2: Data Pipeline}}$
 
 ### *Introduction:*
